@@ -1,5 +1,3 @@
-/* LOAD CORRECT FILE FROM S3 BUCKET */
-
 DROP TABLE IF EXISTS moviesInfo;
 CREATE EXTERNAL TABLE moviesInfo (
     movieId INT,
@@ -14,7 +12,6 @@ FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 LOCATION 's3://dai-2025-paris/deste/output/movielens/moviesInfoDf.csv/';
 
-/* ########################### DATA ANALYSIS ####################################### */
 
 WITH best_movies_per_year AS (
     SELECT *, ROW_NUMBER() OVER (PARTITION BY m.releaseyear ORDER BY m.rating_average DESC) AS rank
