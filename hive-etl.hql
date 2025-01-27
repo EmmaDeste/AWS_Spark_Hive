@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS moviesInfo;
-CREATE EXTERNAL TABLE new_moviesInfo (
+CREATE EXTERNAL TABLE moviesInfo (
     movieId INT,
     title STRING,
     releaseyear INT,
