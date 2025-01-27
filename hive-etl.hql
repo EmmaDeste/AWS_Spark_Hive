@@ -1,5 +1,6 @@
 /* LOAD CORRECT FILE FROM S3 BUCKET */
 
+DROP TABLE IF EXISTS moviesInfo;
 CREATE EXTERNAL TABLE moviesInfo (
     movieId INT,
     title STRING,
